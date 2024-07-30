@@ -20,6 +20,24 @@ The automation described above can be acheived using the below npm script comman
 npm run sync-all-build-upload-restart
 ```
 
+## Prerequisites:
+
+1. Update player OS 
+    - Series 5 players install OS 9.0.145.1+
+    - Series 4 players install OS 8.5.47+
+
+2. Install vscode (https://code.visualstudio.com/download)      
+
+3. Install nvm (https://github.com/nvm-sh/nvm) then install node version v14.17.6
+
+4. Install Git (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+5. Install the Brightsign bsc CLI tool (https://www.npmjs.com/package/@brightsign/bsc)
+```bash
+npm install -g @brightsign/bsc
+```
+
+
 ## Let's get started
 
 Clone the repo onto your Mac
@@ -43,13 +61,24 @@ In the Telnet session you should see a command that you can copy and paste in th
 
 ![alt text](screenshots/telnet-setup-string.png)
 
-See below for the setup string extracted from the Telnet session which will be used in the VS Code project to set the node version, install the node project dependencies, export the relevant environment variable for the npm script and configure the test player so it may be controlled via the Brightsign bsc cli tool:
+See below for the setup string (*Mac ONLY NOT Windows - see further down for Windows based systems*) extracted from the Telnet session which will be used in the VS Code project to set the node version, install the node project dependencies, export the relevant environment variable for the npm script and configure the test player so it may be controlled via the Brightsign bsc cli tool:
 
 ```bash
 nvm use v14.17.6 && npm install && export DEVICE_NAME=XT1145-0018 && bsc addplayer XT1145-0018 192.168.1.34
 ```
 
 ![alt text](screenshots/vscode-npm-install.png)
+
+Please note that for *Windows* based system, I would suggest entering each command separately (one after the other) in the terminal using the Windows specific syntax:
+
+```powershell
+
+nvm use v14.17.6
+npm install
+$env:DEVICE_NAME="XT1145-0018"
+bsc addplayer $env:DEVICE_NAME "192.168.1.34"
+
+```
 
 Locate and modify the .env file with the IP address of the player (should be displayed on screen attached to the player)
 
@@ -66,6 +95,13 @@ npm run sync-all-build-upload-restart
 if it all worked as expected, you should see the highlighted messages (Script command sent successfully: script autorun.brs and @@@ roNodeJs successfully created  @@@ ) in the printscreen below in the console output:
 
 ![alt text](screenshots/working-setup.png)
+
+Please note that on a *Windows* system you will need to modify the package.json file (which was originally build to run on a Mac) with the relevant command for the "sync-all-build-upload-restart" script :
+
+```powershell
+"sync-all-build-upload-restart": "xcopy /E /I src\\nodeApp dist\\ && copy src\\autorun.brs dist\\ && npx webpack --config webpack.config.js && bsc putfile %DEVICE_NAME% .\\dist && node restart.js"
+```
+![alt text](screenshots/windows-packageJson.png)
 
 # Debugging the app
 
