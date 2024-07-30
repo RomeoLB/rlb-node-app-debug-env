@@ -1,7 +1,7 @@
 # rlb-node-app-debug-env
 
 ## Description
-The package available here is a node based application that serves a site using an express server. The currently looping video can be changed by sending a UDP command on port 5000 ("red" or "green" UDP message).
+The package available here is a node based application that serves a site using an express server. The currently looping video can be changed by sending a UDP command on port 5000 ("red" or "green" UDP message). The backend communicates with the frontend using websockets.
 
 ![alt text](screenshots/app-site.png)
 
