@@ -34,8 +34,5 @@ In the Telnet session you should see a command that you can copy and paste in th
 
 
 
-## Installation
-To install the necessary dependencies, run the following command in your terminal:
+## More info to be added later...
 
-```sh
-nvm use v14.17.6 && npm install
