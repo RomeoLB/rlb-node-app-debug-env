@@ -1,0 +1,58 @@
+/* Reset some default browser styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif; /* Set a default font */
+}
+
+/* Style for the app div */
+#app {
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: center; /* Center contents vertically */
+    align-items: center; /* Center contents horizontally */
+    height: 100%; /* Full height of the viewport */
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+/* Style for the h1 tag */
+#app h1 {
+    font-size: 3em; /* Large font size */
+    margin: 0 0 20px 0; /* Margin to separate from buttons */
+}
+
+/* Style for buttons */
+button {
+    padding: 10px 20px; /* Add some padding */
+    font-size: 1.2em; /* Slightly larger font for buttons */
+    margin: 10px 0; /* Space between buttons, adjustable */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 90px;
+}
+
+/* Specific styles for button colors */
+button:nth-of-type(1) {
+    background-color: red; /* Red button */
+    color: white; /* Text color for the red button */
+}
+
+button:nth-of-type(2) {
+    background-color: green; /* Green button */
+    color: white; /* Text color for the green button */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    opacity: 0.8; /* Slightly fade on hover */
+}
+
+/* Additional style for the logo */
+#app img.logo {
+    margin-top: 20px; /* Space between buttons and logo */
+    max-width: 150px; /* Set a maximum width for the logo */
+    height: auto; /* Maintain aspect ratio */
+}

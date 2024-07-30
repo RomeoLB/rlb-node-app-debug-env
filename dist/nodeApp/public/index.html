@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <title> RLB HTML UDP Video Selector</title>
+<head>
+<link rel="stylesheet" href="css/style.css">    
+</head>
+<body>
+    <div id="vid_bg" class="video-container">
+        <!-- loop same file via loop property - seamless loop with adequate video -->
+        <video id="deal_video_content" src="media/vid1.mp4" type="video/mp4" muted loop autoplay hwz="z-index:-1"></video>
+
+        <!-- loop same file by calling video.play() again when video.addEventListener 'ended' -->
+        <!-- <video id="deal_video_content" src="vid1.mp4" type="video/mp4" muted autoplay></video> -->
+    </div>
+    <div class="ip-address-container">
+        <p id="ip-address">0.0.0.0</p>
+    </div>
+    <div class="udp-message-container">
+        <p id="udp-message">send "red" or "green" UDP message on port 5000 to switch beween video clips</p>
+    </div>
+</body>
+<script src="js/app-public.js"></script>
+</html>

@@ -1,0 +1,20 @@
+<!-- DeviceWebPage/control -->
+ <!-- http://192.168.1.34:3000/control/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDP Video Selector</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>UDP Video Selector</h1>
+        <button onclick="sendUdpMessage('red')">red</button>
+        <button onclick="sendUdpMessage('green')">green</button>
+        <img src="media/BrightSign_logo.eps.png" alt="Logo" class="logo">
+    </div>
+    <script src="js/app-control.js"></script>
+</body>
+</html>

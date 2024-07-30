@@ -1,0 +1,38 @@
+{
+  "name": "rlb-node-debug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "autorun.brs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "restart": "node restart.js",
+    "upload-full-app": "bsc putfile $DEVICE_NAME ./dist",
+    "upload-control-folder": "bsc putfile $DEVICE_NAME ./dist/nodeApp/control /nodeApp/control",
+    "upload-public-folder": "bsc putfile $DEVICE_NAME ./dist/nodeApp/public /nodeApp/public",
+    "upload-publicCSS-folder": "bsc putfile $DEVICE_NAME ./dist/nodeApp/public/css /nodeApp/public/css",
+    "upload-publicCSS-file": "bsc putfile $DEVICE_NAME ./dist/nodeApp/public/css/style.css /nodeApp/public/css",
+    "upload-full-app-restart": "bsc putfile $DEVICE_NAME ./dist && node restart.js",
+    "build-upload-bundle-restart": "npx webpack --config webpack.config.js && bsc putfile $DEVICE_NAME ./dist/nodeApp/bundle.js /nodeApp && node restart.js",
+    "sync-dist": "cp -r src/nodeApp dist/",
+    "sync-all": "cp -r src/nodeApp dist/ && cp src/autorun.brs dist/",
+    "sync-all-build-upload-restart": "cp -r src/nodeApp dist/ && cp src/autorun.brs dist/ && npx webpack --config webpack.config.js && bsc putfile $DEVICE_NAME ./dist && node restart.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@brightsign/bsc": "^1.0.9",
+    "bufferutil": "^4.0.8",
+    "dgram": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "serve-favicon": "^2.5.0",
+    "telnet-client": "^2.2.1",
+    "utf-8-validate": "^6.0.4",
+    "webpack": "^5.93.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
+  }
+}

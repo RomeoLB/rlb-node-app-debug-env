@@ -1,0 +1,11 @@
+1 - Open Telnet session with the player to get the required info
+2 - Set the player IP address in the .env file (IP displayed on screen attached to the player and in Telnet serial output)
+3 - nvm use v14.17.6
+4 - export DEVICE_NAME=XT1145-0018 - export DEVICE_NAME=<your-player-name> - check variable with echo $DEVICE_NAME 
+5 - check package.json for available script to use with - npm run <script-name> - npm run upload-full-app-restart
+6 - Full automation script to copy the src folder (including the autorun.brs) to the dist folder, 
+    build the bundle.js using webpack parameters, upload the dist folder to the player SD card (using bsc CLI tool),
+    use Telnet to restart the autorun/BS Application - npm run sync-all-build-upload-restart
+
+Express site for video playback and info is served on http://player-ip-address:3000/public
+Control page for UDP control is served on http://player-ip-address:3000/control 

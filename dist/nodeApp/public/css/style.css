@@ -1,0 +1,77 @@
+/* public/style.css */
+
+body {
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+.ip-address-container {
+    position: absolute; /* Positioning it on top of the video */
+    top: 10px;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust centering */
+    height: 10%; 
+    width: 85%;
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+    color: white; /* Text color */
+    font-size: 35px; /* Font size */
+}
+
+#ip-address {
+    margin: 0; /* Remove default margin */
+}
+
+.udp-message-container {
+    position: absolute; /* Positioning it on top of the video */
+    top: 960px;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust centering */
+    height: 10%; 
+    width: 85%;
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+    color: white; /* Text color */
+    font-size: 35px; /* Font size */
+}
+
+#udp-message {
+    margin: 0; /* Remove default margin */
+}
+
+
+/* body {
+
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+      
+#app {
+    text-align: center;
+}
+
+#message {
+    font-size: 2rem;
+    color: #333;
+} */
