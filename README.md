@@ -12,4 +12,4 @@ Provide a brief description of your project here. Explain what it does, its purp
 To install the necessary dependencies, run the following command in your terminal:
 
 ```sh
-nvm use v14.17.6 && npm install# rlb-node-app-debug-env
+nvm use v14.17.6 && npm install
